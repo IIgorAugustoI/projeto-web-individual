@@ -5,7 +5,7 @@ try {
 $sql_query = $conn->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
 
-    echo '<select name="languages" id="lang" class="categoria__opcoes">';
+    echo '<select name="formulario__veiculos_marca" class="categoria__opcoes">';
 
     while ($row = $sql_query->fetch_assoc()) {
       echo '<option>' . $row["nome"] . '</option>';

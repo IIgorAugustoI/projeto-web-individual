@@ -5,7 +5,6 @@ header('location: ../index.php');
 exit;
 }
 require_once('database/connect.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +22,7 @@ require_once('database/connect.php');
         <h1>Cadastro de veículos</h1>
       </header>
       <section class="sessao_forumlario">
-        <form method="POST" class="formulario">
+        <form method="post" action="src/form_cadastro_veiculo.php" class="formulario">
           <div class="formulario div__formulario">
             <label for="formulario__veiculos_marca" class="label_form">
               <span>Marca: </span>
@@ -67,8 +66,8 @@ require_once('database/connect.php');
           </div>
 
           <div class="botao_formulario formulario div__formulario">
-            <button type="submit" class="botao botao_enviar"><a href="#">Enviar</a></button>
-            <button type="reset" class="botao botao_resetar"><a href="#">Resetar</a></button>
+            <button type="submit" class="botao botao_enviar">Enviar</button>
+            <input type="button" value="Voltar" class="botao botao_voltar" onClick="JavaScript: window.history.back();">
           </div>
         </form>
       </section>
