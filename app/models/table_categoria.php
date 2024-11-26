@@ -1,4 +1,13 @@
 <?php 
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+if (!isset($_SESSION['user'])){
+header('location: ../../index.php');
+exit;
+}
+
 $sql_code = "SELECT * FROM categoria;";
 try {
 $sql_query = $conn->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);

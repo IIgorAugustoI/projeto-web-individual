@@ -1,4 +1,5 @@
 <?php
+
 $servername = "localhost";
 $database = "locadora";
 $username = "user_locadora";

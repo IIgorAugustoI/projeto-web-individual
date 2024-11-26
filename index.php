@@ -1,4 +1,5 @@
 <?php
+
 require_once('app/database/connect.php');
 
 if(isset($_POST['user']) || isset($_POST['senha'])){
@@ -9,14 +10,15 @@ if(isset($_POST['user']) || isset($_POST['senha'])){
   
   $quantidade = $sql_query->num_rows;
   if($quantidade == 1) {
-      $usuario = $sql_query->fetch_assoc();
-      if(!isset($_SESSION)) {
-          session_start();
-      }
-      $_SESSION['user'] = $usuario['nome'];
-      header('Location: app/locadora.php');
+    session_start();
+
+    $usuario = $sql_query->fetch_assoc();
+    
+    $_SESSION['user'] = $usuario['nome'];
+    header('Location: app/principal.php');
   } else {
       echo '<div class="usuario-invalido"><p>Falha ao logar! E-mail ou senha incorretos. <p/><div/>';
+
   }
     
 }
